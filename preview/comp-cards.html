@@ -1,0 +1,41 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;font-family:var(--font-brand);background:#fff;padding:22px 24px;}
+  .lbl{margin:0 0 16px;font-size:12px;font-weight:700;color:#4F4F4F;letter-spacing:1.5px;text-transform:uppercase;}
+  .row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px;}
+  .card{width:180px;border-radius:16px;overflow:hidden;border:1px solid #E6E6E6;box-shadow:0 2px 6px rgba(0,0,0,.07);}
+  .img{height:110px;background:#CBFFE4;display:flex;align-items:center;justify-content:center;font-size:32px;color:#04FF7E;}
+  .body{padding:12px 14px;}
+  .name{font:700 14px/20px Arial;color:#000;}
+  .price{font:700 16px/22px Arial;color:#9B00FE;margin-top:4px;}
+  .tag{display:inline-block;padding:3px 10px;border-radius:999px;font:700 11px/16px Arial;text-transform:uppercase;letter-spacing:.5px;}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;}
+</style></head>
+<body>
+  <p class="lbl">Product card · chips</p>
+  <div class="row">
+    <div class="card">
+      <div class="img" style="background:#FFCBDB">🌸</div>
+      <div class="body">
+        <div class="name">Pink Passion Bouquet</div>
+        <div class="price">£ 44.99</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img" style="background:#E9CBFF">💐</div>
+      <div class="body">
+        <div class="name">Summer Harvest</div>
+        <div class="price">£ 59.99</div>
+      </div>
+    </div>
+  </div>
+  <div class="tags">
+    <span class="tag bg-purple">Same-day</span>
+    <span class="tag bg-green">Next-day</span>
+    <span class="tag bg-gold">Premium</span>
+    <span class="tag bg-light-grey">Seasonal</span>
+    <span class="tag bg-pink">Bestseller</span>
+  </div>
+</body></html>

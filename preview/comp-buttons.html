@@ -1,0 +1,31 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;font-family:var(--font-brand);background:#fff;padding:22px 24px;}
+  .lbl{margin:0 0 16px;font-size:12px;font-weight:700;color:#4F4F4F;letter-spacing:1.5px;text-transform:uppercase;}
+  .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px;}
+  .btn{height:48px;padding:0 28px;border-radius:999px;font-family:Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:.5px;text-transform:uppercase;border:none;cursor:pointer;}
+  .pri{background:#9B00FE;color:#fff;}
+  .sec{background:transparent;color:#9B00FE;border:2px solid #9B00FE;}
+  .ghost{background:transparent;color:#000;border:2px solid #000;}
+  .dis{background:#BDBDBD;color:#F6F6F6;}
+  .ffbtn{height:48px;padding:0 28px;border-radius:999px;font-family:Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:.5px;text-transform:uppercase;border:none;cursor:pointer;background:#007FA3;color:#fff;}
+  .sublbl{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#BDBDBD;margin-bottom:8px;}
+</style></head>
+<body>
+  <p class="lbl">Buttons</p>
+  <p class="sublbl">Interflora</p>
+  <div class="row">
+    <button class="btn pri">Order now</button>
+    <button class="btn sec">View more</button>
+    <button class="btn ghost">Cancel</button>
+    <button class="btn dis" disabled>Unavailable</button>
+  </div>
+  <p class="sublbl">Flying Flowers</p>
+  <div class="row">
+    <button class="ffbtn">Shop now</button>
+    <button class="btn" style="background:#048670;color:#fff;border-radius:999px">Send flowers</button>
+    <button class="btn" style="background:#E01761;color:#fff;border-radius:999px">Add to bag</button>
+  </div>
+</body></html>

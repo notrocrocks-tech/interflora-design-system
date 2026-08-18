@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- @dsCard group="UI Kit — Business Crm" name="Business CRM — App kit" subtitle="Dashboard · Clients · Chat · New task — Interflora purple" viewport="440x600" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helm — Business / CRM UI Kit</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  html,body{margin:0;height:100%;}
+  body{font-family:Arial,sans-serif;background:#F6F6F6;display:flex;align-items:flex-start;justify-content:center;min-height:100vh;padding:30px;box-sizing:border-box;}
+  .material-symbols-rounded{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;display:inline-block;}
+  button{font-family:inherit;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="../icons.jsx"></script>
+<script type="text/babel" src="Frame.jsx"></script>
+<script type="text/babel" src="Dashboard.jsx"></script>
+<script type="text/babel" src="Clients.jsx"></script>
+<script type="text/babel" src="Chat.jsx"></script>
+<script type="text/babel" src="NewTask.jsx"></script>
+<script type="text/babel">
+const { useState } = React;
+const TITLES = { dashboard:'Dashboard', clients:'Clients', messages:'Messages', schedule:'Schedule', settings:'Settings' };
+
+function App() {
+  const C = window.HelmColors;
+  const [screen, setScreen] = useState('dashboard');
+  const [drawer, setDrawer] = useState(false);
+  const [modal, setModal] = useState(false);
+
+  const navigate = (id) => { setScreen(id); setDrawer(false); };
+  const showFab = screen==='dashboard' || screen==='clients';
+  const placeholder = (screen==='schedule'||screen==='settings');
+
+  return (
+    <Phone>
+      {/* App bar — chat supplies its own header */}
+      {screen!=='messages' &&
+        <AppBar title={TITLES[screen]} onMenu={()=>setDrawer(true)}
+          avatar={screen==='dashboard'?null:undefined}
+          filter={screen==='clients'}
+          actionIcon="more_vert" onAction={()=>{}}/>}
+
+      {/* Screen body */}
+      {screen==='dashboard' && <Dashboard/>}
+      {screen==='clients' && <Clients/>}
+      {screen==='messages' && <Chat/>}
+      {placeholder &&
+        <div style={{flex:1, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:10, color:C.ink4, padding:40, textAlign:'center'}}>
+          <MS name={screen==='schedule'?'event':'settings'} size={48} color={C.ink4}/>
+          <div style={{fontSize:18, color:C.ink3}}>{TITLES[screen]}</div>
+          <div style={{fontSize:13}}>Screen not included in this kit sample.</div>
+        </div>}
+
+      {/* FAB → create task */}
+      {showFab &&
+        <button onClick={()=>setModal(true)} style={{position:'absolute', right:18, bottom:18, width:56, height:56,
+          borderRadius:'50%', background:C.primary, border:'none', cursor:'pointer', zIndex:5,
+          boxShadow:'0 6px 16px rgba(33,150,243,.45)', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <MS name="add" size={28} color="#fff"/>
+        </button>}
+
+      <Drawer open={drawer} active={screen} onClose={()=>setDrawer(false)} onNavigate={navigate}/>
+      <NewTaskModal open={modal} onClose={()=>setModal(false)}/>
+    </Phone>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

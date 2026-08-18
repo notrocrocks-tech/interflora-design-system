@@ -1,0 +1,211 @@
+/* ============================================================================
+   INTERFLORA GROUP — Design System
+   colors_and_type.css — brand colour + type tokens for two sister brands:
+     • INTERFLORA    — vivid, playful florist brand (primary: PURPLE #9B00FE)
+     • FLYING FLOWERS — sister brand (cobalt / jade / lime / blush)
+   ----------------------------------------------------------------------------
+   Brand font: ARIAL (system). Available weights: Regular 400 / Bold 700.
+   Colour values + combination rules are transcribed verbatim from the brand
+   colour spec. Default body theme = Interflora; add class .brand-ff for the
+   Flying Flowers theme.
+   ========================================================================== */
+
+:root {
+  /* ---- Font ------------------------------------------------------------- */
+  /*
+   * DIGITAL BRAND FACE: Arial (system font). No downloads for end users, and
+   * every user sees the same type rather than it varying by whoever has Söhne
+   * or Gotham installed. Söhne (Klim) remains the print / brand-book typeface;
+   * it is intentionally not used on screen to avoid font loading.
+   */
+  --font-brand: Arial, 'Helvetica Neue', sans-serif;
+  --font-sans:  var(--font-brand);
+  --fw-light:   300;   /* Söhne Leicht */
+  --fw-medium:  500;   /* Söhne Kräftig — labelled "Bold" in visual designs */
+  --fw-regular: 400;
+  --fw-bold:    700;
+
+  /* ======================================================================
+     INTERFLORA — brand palette  (--if-*)
+     ====================================================================== */
+  --if-purple:       #9B00FE;   /* PURPLE — primary */
+  --if-mid-purple:   #C366FF;   /* MID_PURPLE */
+  --if-lilac:        #E9CBFF;   /* LILAC */
+  --if-red:          #FF0050;   /* RED */
+  --if-mid-red:      #FF98B8;   /* MID_RED */
+  --if-pink:         #FFCBDB;   /* PINK */
+  --if-green:        #04FF7E;   /* GREEN */
+  --if-mid-green:    #82FFC0;   /* MID_GREEN */
+  --if-light-green:  #CBFFE4;   /* LIGHT_GREEN */
+  --if-yellow:       #FEDC00;   /* YELLOW */
+  --if-mid-yellow:   #FFF098;   /* MID_YELLOW */
+  --if-light-yellow: #FFF7CB;   /* LIGHT_YELLOW */
+  --if-orange:       #FF842B;   /* ORANGE */
+  --if-mid-orange:   #FF9C55;   /* MID_ORANGE */
+  --if-peach:        #FECCA7;   /* PEACH */
+  --if-gold:         #CAAD59;   /* GOLD — premium accent (CMYK C23 M29 Y78 K0 → #C4B538 print equiv) */
+  --if-rich-black:   #0A0806;   /* Interflora Rich Black — CMYK C75 M68 Y67 K95 (print); use #000 on screen */
+  --if-black:        #000000;   /* BLACK */
+  --if-dark-grey:    #4F4F4F;   /* DARK_GREY */
+  --if-mid-grey:     #BDBDBD;   /* MID_GREY */
+  --if-light-grey:   #F6F6F6;   /* LIGHT_GREY */
+  --if-white:        #FFFFFF;   /* WHITE */
+
+  /* ---- Interflora per-background DEFAULT TEXT colour ---------------------
+     For any component that has text but no explicit colour combination, the
+     text colour defaults to the value below for its background. (Spec:
+     "Default Colours for Text".) */
+  --on-purple:       #FFFFFF;
+  --on-mid-purple:   #000000;
+  --on-lilac:        #000000;
+  --on-red:          #000000;
+  --on-mid-red:      #000000;
+  --on-pink:         #000000;
+  --on-green:        #000000;
+  --on-mid-green:    #000000;
+  --on-light-green:  #000000;
+  --on-yellow:       #000000;
+  --on-mid-yellow:   #000000;
+  --on-light-yellow: #000000;
+  --on-orange:       #000000;
+  --on-mid-orange:   #000000;
+  --on-peach:        #000000;
+  --on-gold:         #000000;
+  --on-black:        #FFFFFF;
+  --on-dark-grey:    #FFFFFF;
+  --on-mid-grey:     #000000;
+  --on-light-grey:   #000000;
+  --on-white:        #000000;
+
+  /* =====================================================================
+     FLYING FLOWERS — brand palette  (--ff-*)
+     Rule: Flying Flowers ALWAYS uses white text.
+     ====================================================================== */
+  --ff-black:        #000000;   /* FF_BLACK */
+  --ff-dark-grey:    #6D6D6D;   /* FF_DARK_GREY */
+  --ff-lazy-lime:    #BDD245;   /* FF_LAZY_LIME */
+  --ff-light-grey:   #F6F6F6;   /* FF_LIGHT_GREY */
+  --ff-plush-blush:  #F7C2CE;   /* FF_PLUSH_BLUSH */
+  --ff-sharp-yellow: #FEC800;   /* FF_SHARP_YELLOW */
+  --ff-white:        #FFFFFF;   /* FF_WHITE */
+  /* Heading colours */
+  --ff-cobalt:       #007FA3;   /* FF_COBALT */
+  --ff-jade:         #048670;   /* FF_JADE */
+  --ff-wild-exotic:  #E01761;   /* FF_WILD_EXOTIC */
+
+  /* ======================================================================
+     SEMANTIC ALIASES — default brand = INTERFLORA
+     ====================================================================== */
+  --brand:        var(--if-purple);
+  --on-brand:     var(--if-white);
+  --brand-accent: var(--if-gold);
+  --bg:           var(--if-white);
+  --surface:      var(--if-white);
+  --surface-alt:  var(--if-light-grey);
+  --fg:           var(--if-black);     /* default text */
+  --fg-muted:     var(--if-dark-grey); /* secondary text */
+  --fg-faint:     var(--if-mid-grey);  /* disabled / placeholder */
+  --line:         #E6E6E6;
+  --icon:         var(--if-black);
+
+  /* ======================================================================
+     RADIUS · ELEVATION · SPACING  (4px base grid)
+     ====================================================================== */
+  --r-sm: 4px; --r-md: 8px; --r-lg: 16px; --r-xl: 24px; --r-pill: 999px;
+
+  --e-1: 0 1px 2px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.10);
+  --e-2: 0 2px 6px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+  --e-3: 0 6px 18px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.06);
+  --e-4: 0 14px 36px rgba(0,0,0,.16), 0 4px 8px rgba(0,0,0,.08);
+
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:20px;
+  --s-6:24px; --s-8:32px; --s-10:40px; --s-12:48px; --s-16:64px;
+
+  --ease-standard: cubic-bezier(.4, 0, .2, 1);
+  --dur-fast: 120ms; --dur-base: 200ms; --dur-slow: 320ms;
+}
+
+/* ===========================================================================
+   FLYING FLOWERS theme — add class .brand-ff to a root/container
+   ========================================================================== */
+.brand-ff {
+  --brand:        var(--ff-cobalt);
+  --on-brand:     var(--ff-white);
+  --brand-accent: var(--ff-wild-exotic);
+  --bg:           var(--ff-white);
+  --surface:      var(--ff-white);
+  --surface-alt:  var(--ff-light-grey);
+  --fg:           var(--ff-black);
+  --fg-muted:     var(--ff-dark-grey);
+  --fg-faint:     #B5B5B5;
+  --icon:         var(--ff-black);
+}
+
+/* ==========================================================================
+   COMBINATION UTILITIES — background + its correct default text colour.
+   Pair a background swatch with on-brand text in one class (Interflora).
+   ========================================================================== */
+.bg-purple       { background: var(--if-purple);       color: var(--on-purple); }
+.bg-mid-purple   { background: var(--if-mid-purple);   color: var(--on-mid-purple); }
+.bg-lilac        { background: var(--if-lilac);        color: var(--on-lilac); }
+.bg-red          { background: var(--if-red);          color: var(--on-red); }
+.bg-mid-red      { background: var(--if-mid-red);      color: var(--on-mid-red); }
+.bg-pink         { background: var(--if-pink);         color: var(--on-pink); }
+.bg-green        { background: var(--if-green);        color: var(--on-green); }
+.bg-mid-green    { background: var(--if-mid-green);    color: var(--on-mid-green); }
+.bg-light-green  { background: var(--if-light-green);  color: var(--on-light-green); }
+.bg-yellow       { background: var(--if-yellow);       color: var(--on-yellow); }
+.bg-mid-yellow   { background: var(--if-mid-yellow);   color: var(--on-mid-yellow); }
+.bg-light-yellow { background: var(--if-light-yellow); color: var(--on-light-yellow); }
+.bg-orange       { background: var(--if-orange);       color: var(--on-orange); }
+.bg-mid-orange   { background: var(--if-mid-orange);   color: var(--on-mid-orange); }
+.bg-peach        { background: var(--if-peach);        color: var(--on-peach); }
+.bg-gold         { background: var(--if-gold);         color: var(--on-gold); }
+.bg-black        { background: var(--if-black);        color: var(--on-black); }
+.bg-dark-grey    { background: var(--if-dark-grey);    color: var(--on-dark-grey); }
+.bg-mid-grey     { background: var(--if-mid-grey);     color: var(--on-mid-grey); }
+.bg-light-grey   { background: var(--if-light-grey);   color: var(--on-light-grey); }
+.bg-white        { background: var(--if-white);        color: var(--on-white); }
+
+/* Flying Flowers — always white text on brand backgrounds */
+.ff-bg-cobalt      { background: var(--ff-cobalt);      color:#fff; }
+.ff-bg-jade        { background: var(--ff-jade);        color:#fff; }
+.ff-bg-wild-exotic { background: var(--ff-wild-exotic); color:#fff; }
+.ff-bg-lime        { background: var(--ff-lazy-lime);   color:#fff; }
+.ff-bg-blush       { background: var(--ff-plush-blush); color:#fff; }
+.ff-bg-yellow      { background: var(--ff-sharp-yellow);color:#fff; }
+.ff-bg-black       { background: var(--ff-black);       color:#fff; }
+
+/* ==========================================================================
+   TYPOGRAPHY — Arial. Two weights: Regular 400 / Bold 700.
+   Type scale on a 4px grid. Headings BOLD; body REGULAR.
+   ========================================================================== */
+.t-display { font-weight: 700; font-size: 56px; line-height: 60px; letter-spacing: -1px; }
+.t-h1      { font-weight: 700; font-size: 40px; line-height: 48px; letter-spacing: -.5px; }
+.t-h2      { font-weight: 700; font-size: 32px; line-height: 40px; letter-spacing: -.25px; }
+.t-h3      { font-weight: 700; font-size: 24px; line-height: 32px; }
+.t-h4      { font-weight: 700; font-size: 20px; line-height: 28px; }
+.t-lead    { font-weight: 400; font-size: 20px; line-height: 30px; }
+.t-body    { font-weight: 400; font-size: 16px; line-height: 24px; }
+.t-body-bd { font-weight: 700; font-size: 16px; line-height: 24px; }
+.t-small   { font-weight: 400; font-size: 14px; line-height: 20px; }
+.t-caption { font-weight: 400; font-size: 12px; line-height: 16px; letter-spacing: .2px; }
+.t-overline{ font-weight: 700; font-size: 12px; line-height: 16px; letter-spacing: 1.5px; text-transform: uppercase; }
+.t-button  { font-weight: 700; font-size: 16px; line-height: 16px; letter-spacing: .5px; }
+
+/* ==========================================================================
+   ELEMENT DEFAULTS — opt-in scope
+   ========================================================================== */
+.ds-scope {
+  font-family: var(--font-brand);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+.ds-scope h1 { font: 700 40px/48px var(--font-brand); letter-spacing:-.5px; margin:0; }
+.ds-scope h2 { font: 700 32px/40px var(--font-brand); margin:0; }
+.ds-scope h3 { font: 700 24px/32px var(--font-brand); margin:0; }
+.ds-scope h4 { font: 700 20px/28px var(--font-brand); margin:0; }
+.ds-scope p  { font: 400 16px/24px var(--font-brand); margin:0; }
+.ds-scope small { font: 400 12px/16px var(--font-brand); color: var(--fg-muted); }
+.ds-scope a { color: var(--brand); }

@@ -1,0 +1,37 @@
+<!-- @dsCard group="Brand" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;font-family:Arial,sans-serif;background:#1a1a1a;padding:20px 24px;}
+  .lbl{margin:0 0 6px;font-size:12px;font-weight:700;color:#6D6D6D;letter-spacing:1.5px;text-transform:uppercase;}
+  .sub{margin:0 0 18px;font-size:12px;color:#4F4F4F;}
+  .row{display:flex;gap:14px;}
+  .tile{border-radius:10px;padding:18px;flex:1;}
+  .name{font-size:13px;font-weight:700;margin-bottom:6px;}
+  .hex{font-size:15px;font-weight:700;letter-spacing:.5px;margin-bottom:4px;}
+  .cmyk{font-size:11px;opacity:.75;letter-spacing:.3px;}
+  .screen{font-size:10px;opacity:.6;margin-top:2px;}
+</style></head>
+<body>
+  <p class="lbl">Brand print colours · CMYK (from brand book)</p>
+  <p class="sub">From embedded spot colour specs in the brand book PDF.</p>
+  <div class="row">
+    <div class="tile" style="background:#9B00FE;color:#fff">
+      <div class="name">PURPLE</div>
+      <div class="hex">#9B00FE</div>
+      <div class="cmyk">Screen primary — no CMYK equiv provided</div>
+    </div>
+    <div class="tile" style="background:#CAAD59;color:#000">
+      <div class="name">GOLD</div>
+      <div class="hex">#CAAD59</div>
+      <div class="cmyk">CMYK C23 M29 Y78 K0</div>
+      <div class="screen">Print → #C4B538 · Screen spec → #CAAD59</div>
+    </div>
+    <div class="tile" style="background:#0A0806;color:#fff">
+      <div class="name">RICH BLACK</div>
+      <div class="hex">#000 (screen)</div>
+      <div class="cmyk">CMYK C75 M68 Y67 K95</div>
+      <div class="screen">Interflora HBlk — warm deep black for print</div>
+    </div>
+  </div>
+</body></html>

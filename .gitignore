@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Reference screenshots — layout-only, excluded from the repo.
+# The brand book PDF in uploads/ is kept deliberately.
+uploads/*.png
+uploads/*.jpg
+uploads/*.jpeg
+uploads/*.webp
+
+# Dependencies (if any tooling is added later)
+node_modules/
+
+# Local env
+.env
+.env.local
