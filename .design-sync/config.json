@@ -1,0 +1,12 @@
+{
+  "projectId": "82e1d892-8781-47fc-9961-d26b15307a60",
+  "projectName": "Interflora Test Design System",
+  "shape": "export",
+  "pkg": ".",
+  "localDir": "./ds-bundle",
+  "readmeHeader": ".design-sync/conventions.md",
+  "namespace": "InterfloraGroupDesignSystem_82e1d8",
+  "globalCssEntry": "styles.css",
+  "globalCssPaths": ["colors_and_type.css"],
+  "notes": "This repo is a Claude Design EXPORT, not a source component library. There is no package.json build, no dist/, no Storybook, and no components. package-build.mjs does not apply. build.mjs stages ds-bundle/ for upload."
+}
